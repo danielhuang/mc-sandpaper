@@ -5,7 +5,7 @@ buildscript {
         jcenter()
         maven {
             name = "forge"
-            url = "https://files.minecraftforge.net/maven"
+            url = "https://maven.minecraftforge.net/"
         }
         maven {
             url "https://jitpack.io"
@@ -15,9 +15,9 @@ buildscript {
         }
     }
     dependencies {
-        classpath "com.github.debuggingss:ForgeGradle:FG_2.1-SNAPSHOT"
+        classpath "com.github.debuggingss:ForgeGradle:1d22621a6b2745fdfab737fa85181026e68a8a1d"
         classpath "com.github.jengelman.gradle.plugins:shadow:6.1.0"
-        classpath "com.github.debuggingss:MixinGradle:0.6-SNAPSHOT"
+        classpath "com.github.xcfrg:MixinGradle:0.6-SNAPSHOT"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
@@ -27,9 +27,9 @@ apply plugin: "net.minecraftforge.gradle.forge"
 apply plugin: "com.github.johnrengelman.shadow"
 apply plugin: "org.spongepowered.mixin"
 
-group = 'dev.debuggings'
+group = 'cc.danielh'
 version = '1.0'
-archivesBaseName = 'examplemod'
+archivesBaseName = 'sandpaper'
 
 compileJava.options.encoding = 'UTF-8'
 sourceCompatibility = targetCompatibility = compileJava.sourceCompatibility = compileJava.targetCompatibility = '1.8'
@@ -43,11 +43,11 @@ minecraft {
     makeObfSourceJar = false
 
     clientRunArgs += "--tweakClass org.spongepowered.asm.launch.MixinTweaker"
-    clientRunArgs += "--mixin mixins.examplemod.json"
+    clientRunArgs += "--mixin mixins.sandpaper.json"
 }
 
 mixin {
-    add sourceSets.main, "mixins.examplemod.refmap.json"
+    add sourceSets.main, "mixins.sandpaper.refmap.json"
 }
 
 sourceSets {
@@ -112,5 +112,3 @@ reobf {
         mappingType = 'SEARGE'
     }
 }
-
-// _._ gradle-ext-ops: exec '(dependency resolve mode set legacy)

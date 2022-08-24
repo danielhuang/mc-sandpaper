@@ -1,0 +1,11 @@
+{
+    "compatibilityLevel": "JAVA_8",
+    "package": "cc.danielh.sandpaper.mixins",
+    "refmap": "mixins.sandpaper.refmap.json",
+    "mixins": [
+        "MixinMinecraft",
+        "MixinEntityUpdate",
+        "MixinRenderManager"
+    ],
+    "verbose": true
+}

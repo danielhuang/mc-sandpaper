@@ -17,3 +17,6 @@ out
 eclipse
 run
 build
+
+.gradle
+.idea
